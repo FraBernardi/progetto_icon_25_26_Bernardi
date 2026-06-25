@@ -1,0 +1,1141 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology"
+         xmlns="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#">
+
+<owl:Ontology rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology"/>
+
+<owl:ObjectProperty rdf:about="#haElementoNarrativo">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#haEvento">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#haOggetto">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#haPersonaggio">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="#haTitolo">
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#numeroEpisodio">
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#numeroStagione">
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:Class rdf:about="#Addio_Personaggio">
+  <rdfs:subClassOf rdf:resource="#Event"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Event">
+  <rdfs:seeAlso rdf:resource="https://dbpedia.org/page/Event"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Assenza_di_Michael">
+  <rdfs:subClassOf rdf:resource="#Debolezza_narrativa"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Debolezza_narrativa"/>
+
+<owl:Class rdf:about="#Episodio">
+  <rdfs:seeAlso rdf:resource="https://dbpedia.org/page/Episode"/>
+</owl:Class>
+
+<owl:Class rdf:about="#EpisodioChiave">
+  <rdfs:subClassOf rdf:resource="#Episodio"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Episodio_buono">
+  <rdfs:subClassOf rdf:resource="#Episodio"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Episodio_eccellente">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#Episodio"/>
+        <owl:Class>
+          <owl:unionOf rdf:parseType="Collection">
+            <owl:Restriction>
+              <owl:onProperty rdf:resource="#haEvento"/>
+              <owl:someValuesFrom rdf:resource="#Addio_Personaggio"/>
+            </owl:Restriction>
+            <owl:Restriction>
+              <owl:onProperty rdf:resource="#haEvento"/>
+              <owl:someValuesFrom rdf:resource="#Matrimonio"/>
+            </owl:Restriction>
+            <owl:Restriction>
+              <owl:onProperty rdf:resource="#haOggetto"/>
+              <owl:someValuesFrom rdf:resource="#Premio_Dundie"/>
+            </owl:Restriction>
+          </owl:unionOf>
+        </owl:Class>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="#Episodio"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Matrimonio">
+  <rdfs:subClassOf rdf:resource="#Event"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Premio_Dundie">
+  <rdfs:subClassOf rdf:resource="#OggettoIconico"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Episodio_scarso">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#Episodio"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#haElementoNarrativo"/>
+          <owl:someValuesFrom rdf:resource="#Debolezza_narrativa"/>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="#Episodio"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Festa_in_Ufficio">
+  <rdfs:subClassOf rdf:resource="#Event"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Guest_star">
+  <rdfs:subClassOf rdf:resource="#Personaggio"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Personaggio">
+  <rdfs:seeAlso rdf:resource="https://dbpedia.org/ontology/FictionalCharacter"/>
+</owl:Class>
+
+<owl:Class rdf:about="#OggettoIconico"/>
+
+<owl:Class rdf:about="#Personaggio_Rilevante">
+  <rdfs:subClassOf rdf:resource="#Personaggio"/>
+</owl:Class>
+
+<owl:NamedIndividual rdf:about="#I_Dundies">
+  <rdf:type rdf:resource="#Premio_Dundie"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Festa_Aziendale">
+  <rdf:type rdf:resource="#Festa_in_Ufficio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Matrimonio_Jim_e_Pam">
+  <rdf:type rdf:resource="#Matrimonio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Addio_Michael_Scott">
+  <rdf:type rdf:resource="#Addio_Personaggio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Mancanza_Michael">
+  <rdf:type rdf:resource="#Assenza_di_Michael"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_0">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_1">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_2">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_3">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_4">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_5">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haPersonaggio rdf:resource="#Guest_Amy_Adams_5"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Guest_Amy_Adams_5">
+  <rdf:type rdf:resource="#Guest_star"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_6">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haOggetto rdf:resource="#I_Dundies"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_7">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_8">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haPersonaggio rdf:resource="#Guest_Nancy_Carell_8"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Guest_Nancy_Carell_8">
+  <rdf:type rdf:resource="#Guest_star"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_9">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haPersonaggio rdf:resource="#Guest_Amy_Adams_9"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Guest_Amy_Adams_9">
+  <rdf:type rdf:resource="#Guest_star"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_10">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haEvento rdf:resource="#Festa_Aziendale"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_11">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_12">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haPersonaggio rdf:resource="#Guest_Tim_Meadows_12"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Guest_Tim_Meadows_12">
+  <rdf:type rdf:resource="#Guest_star"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_13">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_14">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haPersonaggio rdf:resource="#Guest_Ken_Jeong_14"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Guest_Ken_Jeong_14">
+  <rdf:type rdf:resource="#Guest_star"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_15">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haEvento rdf:resource="#Festa_Aziendale"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_16">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haPersonaggio rdf:resource="#Guest_Rob_Riggle_16"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Guest_Rob_Riggle_16">
+  <rdf:type rdf:resource="#Guest_star"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_17">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_18">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_19">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_20">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_21">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haPersonaggio rdf:resource="#Guest_Conan_O'Brien_21"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Guest_Conan_O'Brien_21">
+  <rdf:type rdf:resource="#Guest_star"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_22">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_23">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_24">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haEvento rdf:resource="#Festa_Aziendale"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_25">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_26">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_27">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haEvento rdf:resource="#Festa_Aziendale"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_28">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_29">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haPersonaggio rdf:resource="#Guest_Jerome_Bettis_29"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Guest_Jerome_Bettis_29">
+  <rdf:type rdf:resource="#Guest_star"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_30">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_31">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_32">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_33">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_34">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_35">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_36">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_37">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haEvento rdf:resource="#Festa_Aziendale"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_38">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_39">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_40">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haEvento rdf:resource="#Festa_Aziendale"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_41">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haEvento rdf:resource="#Festa_Aziendale"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_42">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haEvento rdf:resource="#Matrimonio_Jim_e_Pam"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_43">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_44">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_45">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_46">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_47">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_48">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_49">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_50">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_51">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_52">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_53">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haEvento rdf:resource="#Festa_Aziendale"/>
+  <haPersonaggio rdf:resource="#Guest_Kevin_McHale_53"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Guest_Kevin_McHale_53">
+  <rdf:type rdf:resource="#Guest_star"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_54">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_55">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_56">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_57">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haEvento rdf:resource="#Festa_Aziendale"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_58">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_59">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haEvento rdf:resource="#Festa_Aziendale"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_60">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_61">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haEvento rdf:resource="#Festa_Aziendale"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_62">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_63">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_64">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haEvento rdf:resource="#Festa_Aziendale"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_65">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_66">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haPersonaggio rdf:resource="#Guest_Wendi_McLendon-Covey_66"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Guest_Wendi_McLendon-Covey_66">
+  <rdf:type rdf:resource="#Guest_star"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_67">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_68">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haEvento rdf:resource="#Matrimonio_Jim_e_Pam"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_69">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_70">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haEvento rdf:resource="#Matrimonio_Jim_e_Pam"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_71">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_72">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_73">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haEvento rdf:resource="#Matrimonio_Jim_e_Pam"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_74">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haEvento rdf:resource="#Festa_Aziendale"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_75">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_76">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_77">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haPersonaggio rdf:resource="#Guest_Cloris_Leachman_Jack_Black_Jessica_Alba_77"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Guest_Cloris_Leachman_Jack_Black_Jessica_Alba_77">
+  <rdf:type rdf:resource="#Guest_star"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_78">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haEvento rdf:resource="#Festa_Aziendale"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_79">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haEvento rdf:resource="#Festa_Aziendale"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_80">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haEvento rdf:resource="#Festa_Aziendale"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_81">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_82">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haEvento rdf:resource="#Festa_Aziendale"/>
+  <haPersonaggio rdf:resource="#Guest_Idris_Elba_82"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Guest_Idris_Elba_82">
+  <rdf:type rdf:resource="#Guest_star"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_83">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_84">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_85">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_86">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_87">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_88">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_89">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_90">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_91">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_92">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_93">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_94">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haEvento rdf:resource="#Matrimonio_Jim_e_Pam"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_95">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haEvento rdf:resource="#Matrimonio_Jim_e_Pam"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_96">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haPersonaggio rdf:resource="#Guest_Mike_Starr_96"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Guest_Mike_Starr_96">
+  <rdf:type rdf:resource="#Guest_star"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_97">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_98">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_99">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haEvento rdf:resource="#Festa_Aziendale"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_100">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_101">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_102">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_103">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haEvento rdf:resource="#Festa_Aziendale"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_104">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_105">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haPersonaggio rdf:resource="#Guest_Christian_Slater_105"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Guest_Christian_Slater_105">
+  <rdf:type rdf:resource="#Guest_star"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_106">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_107">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_108">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haPersonaggio rdf:resource="#Guest_Mellisa_Rauch_108"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Guest_Mellisa_Rauch_108">
+  <rdf:type rdf:resource="#Guest_star"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_109">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_110">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_111">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_112">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_113">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_114">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_115">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_116">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_117">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haPersonaggio rdf:resource="#Guest_Evan_Peters_117"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Guest_Evan_Peters_117">
+  <rdf:type rdf:resource="#Guest_star"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_118">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_119">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_120">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_121">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haPersonaggio rdf:resource="#Guest_Timothy_Olyphant_121"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Guest_Timothy_Olyphant_121">
+  <rdf:type rdf:resource="#Guest_star"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_122">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_123">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_124">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haEvento rdf:resource="#Festa_Aziendale"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_125">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_126">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_127">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haEvento rdf:resource="#Festa_Aziendale"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_128">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_129">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haPersonaggio rdf:resource="#Guest_Ricky_Gervais_129"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Guest_Ricky_Gervais_129">
+  <rdf:type rdf:resource="#Guest_star"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_130">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haPersonaggio rdf:resource="#Guest_Will_Arnett__Ray_Romano_Jim_Carrey_Ricky_Gervais_130"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Guest_Will_Arnett__Ray_Romano_Jim_Carrey_Ricky_Gervais_130">
+  <rdf:type rdf:resource="#Guest_star"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_131">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_132">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_133">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_134">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_135">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haPersonaggio rdf:resource="#Guest_Will_Ferrell_135"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Guest_Will_Ferrell_135">
+  <rdf:type rdf:resource="#Guest_star"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_136">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haOggetto rdf:resource="#I_Dundies"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_137">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haEvento rdf:resource="#Addio_Michael_Scott"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_138">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_139">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_140">
+  <rdf:type rdf:resource="#Episodio"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_141">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haElementoNarrativo rdf:resource="#Mancanza_Michael"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_142">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haElementoNarrativo rdf:resource="#Mancanza_Michael"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_143">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haElementoNarrativo rdf:resource="#Mancanza_Michael"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_144">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haEvento rdf:resource="#Festa_Aziendale"/>
+  <haElementoNarrativo rdf:resource="#Mancanza_Michael"/>
+  <haPersonaggio rdf:resource="#Guest_Josh_Groban_Stephen_Collins_144"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Guest_Josh_Groban_Stephen_Collins_144">
+  <rdf:type rdf:resource="#Guest_star"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_145">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haEvento rdf:resource="#Festa_Aziendale"/>
+  <haElementoNarrativo rdf:resource="#Mancanza_Michael"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_146">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haElementoNarrativo rdf:resource="#Mancanza_Michael"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_147">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haElementoNarrativo rdf:resource="#Mancanza_Michael"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_148">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haElementoNarrativo rdf:resource="#Mancanza_Michael"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_149">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haElementoNarrativo rdf:resource="#Mancanza_Michael"/>
+  <haPersonaggio rdf:resource="#Guest_Maura_Tierney_149"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Guest_Maura_Tierney_149">
+  <rdf:type rdf:resource="#Guest_star"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_150">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haEvento rdf:resource="#Festa_Aziendale"/>
+  <haElementoNarrativo rdf:resource="#Mancanza_Michael"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_151">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haElementoNarrativo rdf:resource="#Mancanza_Michael"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_152">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haEvento rdf:resource="#Festa_Aziendale"/>
+  <haElementoNarrativo rdf:resource="#Mancanza_Michael"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_153">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haElementoNarrativo rdf:resource="#Mancanza_Michael"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_154">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haElementoNarrativo rdf:resource="#Mancanza_Michael"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_155">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haElementoNarrativo rdf:resource="#Mancanza_Michael"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_156">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haElementoNarrativo rdf:resource="#Mancanza_Michael"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_157">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haElementoNarrativo rdf:resource="#Mancanza_Michael"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_158">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haElementoNarrativo rdf:resource="#Mancanza_Michael"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_159">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haElementoNarrativo rdf:resource="#Mancanza_Michael"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_160">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haEvento rdf:resource="#Festa_Aziendale"/>
+  <haElementoNarrativo rdf:resource="#Mancanza_Michael"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_161">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haElementoNarrativo rdf:resource="#Mancanza_Michael"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_162">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haElementoNarrativo rdf:resource="#Mancanza_Michael"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_163">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haElementoNarrativo rdf:resource="#Mancanza_Michael"/>
+  <haPersonaggio rdf:resource="#Guest_Chris_Bauer_163"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Guest_Chris_Bauer_163">
+  <rdf:type rdf:resource="#Guest_star"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_164">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haElementoNarrativo rdf:resource="#Mancanza_Michael"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_165">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haElementoNarrativo rdf:resource="#Mancanza_Michael"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_166">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haEvento rdf:resource="#Matrimonio_Jim_e_Pam"/>
+  <haElementoNarrativo rdf:resource="#Mancanza_Michael"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_167">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haElementoNarrativo rdf:resource="#Mancanza_Michael"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_168">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haElementoNarrativo rdf:resource="#Mancanza_Michael"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_169">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haElementoNarrativo rdf:resource="#Mancanza_Michael"/>
+  <haPersonaggio rdf:resource="#Guest_Stephen_Colbert_169"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Guest_Stephen_Colbert_169">
+  <rdf:type rdf:resource="#Guest_star"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_170">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haElementoNarrativo rdf:resource="#Mancanza_Michael"/>
+  <haPersonaggio rdf:resource="#Guest_Josh_Groban_170"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Guest_Josh_Groban_170">
+  <rdf:type rdf:resource="#Guest_star"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_171">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haElementoNarrativo rdf:resource="#Mancanza_Michael"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_172">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haElementoNarrativo rdf:resource="#Mancanza_Michael"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_173">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haEvento rdf:resource="#Festa_Aziendale"/>
+  <haElementoNarrativo rdf:resource="#Mancanza_Michael"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_174">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haElementoNarrativo rdf:resource="#Mancanza_Michael"/>
+  <haPersonaggio rdf:resource="#Guest_Julius_Winfield_Erving_174"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Guest_Julius_Winfield_Erving_174">
+  <rdf:type rdf:resource="#Guest_star"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_175">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haElementoNarrativo rdf:resource="#Mancanza_Michael"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_176">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haElementoNarrativo rdf:resource="#Mancanza_Michael"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_177">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haElementoNarrativo rdf:resource="#Mancanza_Michael"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_178">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haEvento rdf:resource="#Festa_Aziendale"/>
+  <haElementoNarrativo rdf:resource="#Mancanza_Michael"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_179">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haElementoNarrativo rdf:resource="#Mancanza_Michael"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_180">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haElementoNarrativo rdf:resource="#Mancanza_Michael"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_181">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haElementoNarrativo rdf:resource="#Mancanza_Michael"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_182">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haElementoNarrativo rdf:resource="#Mancanza_Michael"/>
+  <haPersonaggio rdf:resource="#Guest_Ryan_Howard_182"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Guest_Ryan_Howard_182">
+  <rdf:type rdf:resource="#Guest_star"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_183">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haEvento rdf:resource="#Matrimonio_Jim_e_Pam"/>
+  <haElementoNarrativo rdf:resource="#Mancanza_Michael"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_184">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haEvento rdf:resource="#Matrimonio_Jim_e_Pam"/>
+  <haElementoNarrativo rdf:resource="#Mancanza_Michael"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_185">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haEvento rdf:resource="#Matrimonio_Jim_e_Pam"/>
+  <haElementoNarrativo rdf:resource="#Mancanza_Michael"/>
+  <haPersonaggio rdf:resource="#Guest_Michael_Imperioli__185"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Guest_Michael_Imperioli__185">
+  <rdf:type rdf:resource="#Guest_star"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_186">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haEvento rdf:resource="#Matrimonio_Jim_e_Pam"/>
+  <haElementoNarrativo rdf:resource="#Mancanza_Michael"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Episode_187">
+  <rdf:type rdf:resource="#Episodio"/>
+  <haEvento rdf:resource="#Matrimonio_Jim_e_Pam"/>
+  <haElementoNarrativo rdf:resource="#Mancanza_Michael"/>
+  <haPersonaggio rdf:resource="#Guest_Joan_Cusack_Ed_Begley_Jr_Rachel_Harris_Nancy_Walls_187"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Guest_Joan_Cusack_Ed_Begley_Jr_Rachel_Harris_Nancy_Walls_187">
+  <rdf:type rdf:resource="#Guest_star"/>
+</owl:NamedIndividual>
+
+
+</rdf:RDF>

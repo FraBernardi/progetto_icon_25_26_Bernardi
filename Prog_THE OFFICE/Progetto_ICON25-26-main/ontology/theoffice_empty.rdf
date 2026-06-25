@@ -1,0 +1,250 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology/"
+     xml:base="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#haElementoNarrativo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#haElementoNarrativo">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#haEvento -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#haEvento">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#haOggetto -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#haOggetto">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#haPersonaggio -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#haPersonaggio">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#haTitolo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#haTitolo">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#numeroEpisodio -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#numeroEpisodio">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#numeroStagione -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#numeroStagione">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Addio_Personaggio -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Addio_Personaggio">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Assenza_di_Michael -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Assenza_di_Michael"/>
+    
+
+
+    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio">
+        <rdfs:seeAlso rdf:resource="https://dbpedia.org/page/Episode"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio_buono -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio_buono">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio_eccellente -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio_eccellente">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#haEvento"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Addio_Personaggio"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#haEvento"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Festa_in_Ufficio"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#haEvento"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Matrimonio"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#haOggetto"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Premio_Dundie"/>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio_scarso -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio_scarso">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#haElementoNarrativo"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Assenza_di_Michael"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Event -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Event">
+        <rdfs:seeAlso rdf:resource="https://dbpedia.org/page/Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Festa_in_Ufficio -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Festa_in_Ufficio">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Guest_star -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Guest_star">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Personaggio"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Matrimonio -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Matrimonio">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Personaggio -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Personaggio">
+        <rdfs:seeAlso rdf:resource="https://dbpedia.org/ontology/FictionalCharacter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Personaggio_Rilevante -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Personaggio_Rilevante">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Personaggio"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Premio_Dundie -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Premio_Dundie"/>
+    
+
+
+    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#PuntodiSvolta -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#PuntodiSvolta">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
